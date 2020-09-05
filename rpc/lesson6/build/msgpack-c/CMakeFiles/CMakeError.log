@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0b50d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0b50d.dir/build.make CMakeFiles/cmTC_0b50d.dir/build
+make[1]: Entering directory '/home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0b50d.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++     -DMSGPACK_DEFAULT_API_VERSION=3 -std=c++98     -o CMakeFiles/cmTC_0b50d.dir/CheckSymbolExists.cxx.o -c /home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_0b50d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b50d.dir/link.txt --verbose=1
+/usr/bin/c++   -DMSGPACK_DEFAULT_API_VERSION=3 -std=c++98      CMakeFiles/cmTC_0b50d.dir/CheckSymbolExists.cxx.o  -o cmTC_0b50d -rdynamic 
+CMakeFiles/cmTC_0b50d.dir/CheckSymbolExists.cxx.o：在函数‘main’中：
+CheckSymbolExists.cxx:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0b50d.dir/build.make:97: recipe for target 'cmTC_0b50d' failed
+make[1]: *** [cmTC_0b50d] Error 1
+make[1]: Leaving directory '/home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0b50d/fast' failed
+make: *** [cmTC_0b50d/fast] Error 2
+
+File /home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0f109/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0f109.dir/build.make CMakeFiles/cmTC_0f109.dir/build
+make[1]: Entering directory '/home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0f109.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++     -DMSGPACK_DEFAULT_API_VERSION=3 -std=c++98  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f109.dir/CheckFunctionExists.cxx.o -c /home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_0f109
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f109.dir/link.txt --verbose=1
+/usr/bin/c++   -DMSGPACK_DEFAULT_API_VERSION=3 -std=c++98  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0f109.dir/CheckFunctionExists.cxx.o  -o cmTC_0f109 -rdynamic -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0f109.dir/build.make:97: recipe for target 'cmTC_0f109' failed
+make[1]: *** [cmTC_0f109] Error 1
+make[1]: Leaving directory '/home/shiyanlou/rpc/lesson6/build/msgpack-c/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0f109/fast' failed
+make: *** [cmTC_0f109/fast] Error 2
+
+
